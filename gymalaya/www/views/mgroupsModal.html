@@ -1,0 +1,12 @@
+<div id="mgroupModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button ng-repeat="mgroup in mgroups" class="btn btn-default btn-block workout" ng-click="addExercise(mgroup)">{{mgroup._id}}</button>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default navbar-fixed-bottom padded" role="navigation">
+  <div class="container">
+  	<ul class="nav navbar-nav">
+  		<li class="row">
+  			<div class="col-xs-3">
+  				<button class="btn btn-warning btn-block" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span></button>
+  			</div>
+  		
+			<div class="col-xs-offset-1 col-xs-4">
+  				<button class="btn btn-info btn-block" ng-click="modify()">{{modifyBar|modifierText}}</button>
+  			</div>
+
+			<div class="col-xs-offset-1 col-xs-3">
+  				<button class="btn btn-warning btn-block" ng-class="{'disabled':!backEnabled}" ng-click="back()"><span class="glyphicon glyphicon-arrow-left"></span></button>
+  			</div>
+  		</li>
+  	</ul>
+  </div>
+</nav>

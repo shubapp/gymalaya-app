@@ -1,0 +1,79 @@
+/*General css helpers*/
+.topPadding{
+	padding-top:70px;
+    padding-bottom:170px;
+}
+.spacer {
+    margin-top: 40px;
+}
+.miniSpacer{
+	margin-top: 10px;
+}
+.midSpacer{
+	margin-top: 20px;
+}
+
+.addButton{
+	border-radius: 50%;
+	height: 80px;
+	border: 2px dashed rgb(26, 25, 25);
+	color: #419641;
+	background-color: transparent;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.header{
+	font-weight:bold;
+	font-size:1.5em;
+}
+.exercise{
+	font-size:1.5em;
+}
+
+.divider{
+	height: 0;
+	margin: 10px 0;
+	overflow: hidden;
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid #ddd;
+}
+.scrollable{
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+body{
+	background-image:url('../img/vegetaO.png');
+	background-size:100vw 100vh;
+	overflow-x: hidden;
+}
+
+.appName{
+	font-size:3em;
+	font-weight:bold;
+	color:black;
+}
+.middle{
+	margin-top:65%;
+}
+
+.workout{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.displayable{
+	background-color:white;
+	border-radius: 15px;
+	opacity: 0.9;
+	margin: 0 -15px;
+	padding: 0 5px;	
+	padding-bottom:60px;
+	height:100vh;
+}
+
+.padded{
+	padding: 0 5px;	
+}

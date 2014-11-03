@@ -1,0 +1,34 @@
+<div class="scrollable">
+	<div class="row spacer">
+		<div class="col-xs-12 text-center" ng-class="{'hidden':!modifyBar}">
+			<span class="header">Workouts</span>
+		</div>
+	</div>
+
+	<div class="row midSpacer" ng-repeat="workout in workouts|orderBy:'creation':reverse">
+		<div ng-class="{'col-xs-12':modifyBar, 'hidden':!modifyBar}">
+			<button class="btn btn-default btn-block workout" ng-click="showWorkout(workout)">{{workout.name}}</button>
+		</div>
+		<div ng-class="{'col-xs-10':!modifyBar, 'hidden':modifyBar}">
+			<input type="text" class="form-control" ng-model="workout.name" ng-change="changeWorkout(workout)" />
+		</div>
+		<div ng-class="{'col-xs-2':!modifyBar, 'hidden':modifyBar}">
+			<button class="btn btn-danger btn-block" ng-click="deleteWorkout(workout)"><span class="glyphicon glyphicon-minus"></span></button>
+		</div>
+	</div>
+
+	<div class="row midSpacer" ng-class="{'hidden':!modifyBar}">
+		<div class="col-xs-offset-4 col-xs-4">
+			<button class="btn btn-primary btn-lg btn-block" ng-click="addIndicator()"><span class="glyphicon glyphicon-camera"></span></button>
+		</div>
+	</div>
+
+	<div class="row spacer">
+		<div class="col-xs-offset-4 col-xs-4" ng-class="{'hidden':modifyBar}">
+			<button class="btn btn-block addButton" ng-click="addWorkout()"><span class="glyphicon glyphicon-plus"></span></button>
+		</div>
+	</div>
+
+	<weight-modal></weight-modal>
+    <modifyh-bar></modifyh-bar>
+</div>

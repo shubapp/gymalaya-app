@@ -1,0 +1,83 @@
+<div class="scrollable displayable">
+	<div class="row miniSpacer header"  ng-class="{'hidden':!modifyBar}">
+		<div class="col-xs-5">
+			Name
+		</div>
+		<div class="col-xs-2">
+			Sets
+		</div>
+		<div class="col-xs-2">
+			Reps
+		</div>
+		<div class="col-xs-3">
+			Weight
+		</div>
+	</div>
+
+	<div class="row exercise" ng-repeat="exercise in exercises|orderBy:'startDate':reverse">
+		<divider></divider>
+
+		<div ng-class="{'hidden':modifyBar,'col-xs-2':!modifyBar}">
+			<button class="btn btn-danger btn-block" ng-click="deleteExercise(exercise)"><span class="glyphicon glyphicon-minus"></span></button>
+		</div>
+
+		<div ng-class="{'col-xs-5':modifyBar,'hidden':!modifyBar}">
+			{{exercise.name}}
+		</div>
+		<div ng-class="{'hidden':modifyBar,'col-xs-10':!modifyBar}">
+			<input type="text" class="form-control" ng-model="exercise.name" ng-change="changeExercise(exercise)" />
+		</div>
+
+		<div class="row" ng-class="{'hidden':modifyBar}">
+			<div class="text-center" ng-class="{'col-xs-4':!modifyBar}">
+				<button class="btn btn-default btn-block" ng-click="updateSet(exercise,1)"><span class="glyphicon glyphicon-plus"></span></button>
+			</div>
+			<div class="text-center" ng-class="{'col-xs-4':!modifyBar}">
+				<button class="btn btn-default btn-block" ng-click="updateRep(exercise,1)"><span class="glyphicon glyphicon-plus"></span></button>
+			</div>
+			<div class="text-center" ng-class="{'col-xs-4':!modifyBar}">
+				<button class="btn btn-default btn-block" ng-click="updateWeight(exercise,1)"><span class="glyphicon glyphicon-plus"></span></button>
+			</div>
+		</div>
+
+		<div class="text-center" ng-class="{'col-xs-2':modifyBar,'hidden':!modifyBar}">
+			{{exercise.sets}}
+		</div>
+		<div class="text-center" ng-class="{'col-xs-2':modifyBar,'hidden':!modifyBar}">
+			{{exercise.repetitions}}
+		</div>
+		<div class="text-center" ng-class="{'col-xs-3':modifyBar,'hidden':!modifyBar}">
+			{{exercise.weight}}
+		</div>
+		<div class="text-center" ng-class="{'hidden':modifyBar,'col-xs-4':!modifyBar}">
+			<input type="number" class="form-control" ng-model="exercise.sets" ng-change="changeExercise(exercise)" />
+		</div>
+		<div class="text-center" ng-class="{'hidden':modifyBar,'col-xs-4':!modifyBar}">
+			<input type="number" class="form-control" ng-model="exercise.repetitions" ng-change="changeExercise(exercise)" />
+		</div>
+		<div class="text-center" ng-class="{'hidden':modifyBar,'col-xs-4':!modifyBar}">
+			<input type="number" class="form-control" ng-model="exercise.weight" ng-change="changeExercise(exercise)" />
+		</div>
+
+		<div class="row" ng-class="{'hidden':modifyBar}">
+			<div class="text-center" ng-class="{'col-xs-4':!modifyBar}">
+				<button class="btn btn-default btn-block" ng-click="updateSet(exercise,-1)"><span class="glyphicon glyphicon-minus"></span></button>
+			</div>
+			<div class="text-center" ng-class="{'col-xs-4':!modifyBar}">
+				<button class="btn btn-default btn-block" ng-click="updateRep(exercise,-1)"><span class="glyphicon glyphicon-minus"></span></button>
+			</div>
+			<div class="text-center" ng-class="{'col-xs-4':!modifyBar}">
+				<button class="btn btn-default btn-block" ng-click="updateWeight(exercise,-1)"><span class="glyphicon glyphicon-minus"></span></button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row midSpacer">
+		<div class="col-xs-offset-4 col-xs-4" ng-class="{'hidden':modifyBar}">
+			<button class="btn btn-block addButton" ng-click="openMgroups()"><span class="glyphicon glyphicon-plus"></span></button>
+		</div>
+	</div>
+
+	<mgroups-modal></mgroups-modal>
+    <modifyh-bar></modifyh-bar>
+</div>
